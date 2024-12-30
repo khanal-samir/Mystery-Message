@@ -20,9 +20,9 @@ export async function GET(request: Request) {
   try {
     const user = await UserModel.aggregate([
       { $match: { _id: userId } }, // get user
-      { $unwind: "$messages" }, // opens array
-      { $sort: { "messages.createdAt": -1 } },
-      { $group: { _id: "$_id", messages: { $push: "$messages" } } },
+      { $unwind: "$messages" }, //splits message into individual documents
+      { $sort: { "messages.createdAt": -1 } }, //sorts
+      { $group: { _id: "$_id", messages: { $push: "$messages" } } }, // again combines the messages
     ]).exec();
 
     if (!user || user.length === 0) {
