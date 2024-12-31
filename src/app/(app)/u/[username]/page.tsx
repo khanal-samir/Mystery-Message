@@ -6,9 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { CardHeader, Card } from "@/components/ui/card";
-
 import {
   Form,
   FormControl,
@@ -21,7 +18,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import * as z from "zod";
 import { ApiResponse } from "@/types/ApiResponse";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import { MessagesSchema as messageSchema } from "@/schemas/messageSchema";
 
