@@ -86,8 +86,7 @@ const Dashboard = () => {
     fetchMessages();
 
     fetchAcceptMessage();
-    fetchAcceptMessage();
-  }, [session, setValue, toast, fetchAcceptMessage, fetchMessages]);
+  }, [session]);
 
   // Handle switch change
   const handleSwitchChange = async () => {
