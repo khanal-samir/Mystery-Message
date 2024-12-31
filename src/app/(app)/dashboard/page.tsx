@@ -92,7 +92,7 @@ const Dashboard = () => {
   const handleSwitchChange = async () => {
     try {
       const response = await axios.post<ApiResponse>("/api/accept-message", {
-        acceptMessage: !acceptMessage,
+        isAcceptingMessage: !acceptMessage,
       });
       setValue("acceptMessage", !acceptMessage);
       toast({
